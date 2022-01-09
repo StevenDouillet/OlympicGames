@@ -62,8 +62,11 @@ router.post('/', async (req, res) => {
 */
 router.get('/:id/sports', async function (req, res) {
     const athlete = await Athlete.findById(req.params.id);
-    const sport = await Sport.find({_id: athlete._id});
-    res.json({ sport });
+    const sports = athlete.sports;
+
+    //todo : map sportId to get datas
+
+    res.json({ sports });
 });
 
 module.exports = router;

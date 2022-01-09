@@ -20,6 +20,7 @@ router.get('/', async function (req, res, next) {
 */
 router.get('/:id', async function (req, res) {
     const sport = await Sport.findById(req.params.id);
+    console.log(req.params.id);
     res.json({ sport });
 });
 
@@ -58,8 +59,11 @@ router.post('/delete/:id', async function (req, res, next) {
 */
 router.get('/:id/athletes', async function (req, res) {
     const sport = await Sport.findById(req.params.id);
-    const athlete = await Athlete.find({_id: sport._id});
-    res.json({ athlete });
+    const athletes = sport.athletes;
+
+    //todo : map athleteId to get datas
+
+    res.json({ athletes });
 });
 
 module.exports = router;
