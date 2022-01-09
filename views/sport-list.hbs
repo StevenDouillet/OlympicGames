@@ -1,0 +1,21 @@
+<h2>Liste des sports</h2>
+
+<div class="container-fluid">
+    <a style="margin: 5px 20px 5px 20px;" id="next" href="/sports/new" class="btn btn-primary">Ajouter un sport</a>
+
+    {{#each sports}}
+    <div class="row" style="margin: 5px 20px 5px 20px;">
+        <div class="card" style="width: 100%; max-width: 50rem;">
+            <div class="card-body">
+                <ul>
+                    <li>Nom : {{name}}</li>
+                </ul>
+            </div>
+
+            <form method="post" action="/api/sports/delete/{{_id}}">
+                <button type="submit" class="btn btn-primary">Supprimer</button>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+</div>

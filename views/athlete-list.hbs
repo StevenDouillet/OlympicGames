@@ -1,0 +1,25 @@
+<h2>Liste des athletes</h2>
+
+<div class="container-fluid">
+    <a style="margin: 5px 20px 5px 20px;" id="next" href="/athletes/new" class="btn btn-primary">Ajouter un athlete</a>
+
+    {{#each athletes}}
+    <div class="row" style="margin: 5px 20px 5px 20px;">
+        <div class="card" style="width: 100%; max-width: 50rem;">
+            <div class="card-body">
+                <ul>
+                    <li>Prénom : {{firstName}}</li>
+                    <li>Nom : {{lastName}}</li>
+                    <li>Sexe : {{gender}}</li>
+                    <li>Pays : {{country}}</li>
+                    <li>Date de création : {{createdDate}}</li>
+                </ul>
+            </div>
+
+            <form method="post" action="/api/athletes/delete/{{_id}}">
+                <button type="submit" class="btn btn-primary">Supprimer</button>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+</div>
