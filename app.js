@@ -13,8 +13,8 @@ var webhooksportsRouter = require('./routes/webhook/sports');
 
 var app = express();
 
-const connect = require('./database/mongodb');
-connect()
+/*const connect = require('./database/mongodb');
+connect()*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,10 +27,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/sports', sportsRouter);
+/*app.use('/sports', sportsRouter);
 app.use('/athletes', athletesRouter);
 app.use('/api/athletes', athletesAPIRouter);
-app.use('/api/sports', sportsAPIRouter);
+app.use('/api/sports', sportsAPIRouter);*/
 app.use('/webhook/sports', webhooksportsRouter);
 
 // catch 404 and forward to error handler
