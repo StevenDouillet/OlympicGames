@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', async function (req, res, next) {
-    const action = request.body.queryResult.action || 'unknown';
+    const action = req.body.queryResult.action || 'unknown';
 
     switch (action) {
         case 'sports':
-            response.json({
+            res.json({
                 fulfillmentMessages: [
                     {
                         text: {
@@ -20,7 +20,7 @@ router.post('/', async function (req, res, next) {
             break;
 
         case 'athletes':
-            response.json({
+            res.json({
                 fulfillmentMessages: [
                     {
                         text: {
@@ -34,7 +34,7 @@ router.post('/', async function (req, res, next) {
             break;
 
         default:
-            response.json({
+            res.json({
                 fulfillmentMessages: [
                     {
                         text: {
