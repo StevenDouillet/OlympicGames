@@ -9,6 +9,7 @@ var sportsRouter = require('./routes/sports');
 var sportsAPIRouter = require('./routes/api/sports');
 var athletesRouter = require('./routes/athletes');
 var athletesAPIRouter = require('./routes/api/athletes');
+var webhooksportsRouter = require('./routes/webhook/sports');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/sports', sportsRouter);
 app.use('/athletes', athletesRouter);
 app.use('/api/athletes', athletesAPIRouter);
 app.use('/api/sports', sportsAPIRouter);
+app.use('/webhook/sports', webhooksportsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
