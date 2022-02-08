@@ -31,7 +31,7 @@ app.use('/', indexRouter);
 app.use('/athletes', athletesRouter);
 app.use('/api/athletes', athletesAPIRouter);
 app.use('/api/sports', sportsAPIRouter);*/
-app.use('/webhook/sports', webhooksportsRouter);
+app.use('/webhook', webhooksportsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
