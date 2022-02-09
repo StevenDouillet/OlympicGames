@@ -5,13 +5,13 @@ router.post('/', async function (req, res, next) {
     const action = req.body.queryResult.action || 'unknown';
 
     switch (action) {
-        case 'sports':
+        case 'athletes-number':
             res.json({
                 fulfillmentMessages: [
                     {
                         text: {
                             text: [
-                                'Tu as choisi de voir les sports 🏀'
+                                'There is 11k athletes for the current games'
                             ]
                         }
                     }
@@ -19,13 +19,13 @@ router.post('/', async function (req, res, next) {
             });
             break;
 
-        case 'athletes':
+        case 'sports-number':
             res.json({
                 fulfillmentMessages: [
                     {
                         text: {
                             text: [
-                                'Tu as choisi de voir les athlètes 🏋🏻‍♀️'
+                                'There is 33 sports for the current games (with 5 new)'
                             ]
                         }
                     }
@@ -39,7 +39,7 @@ router.post('/', async function (req, res, next) {
                     {
                         text: {
                             text: [
-                                'Je ne suis pas sûr d\'avoir la réponse...'
+                                'Can you repeat that ?'
                             ]
                         }
                     }
